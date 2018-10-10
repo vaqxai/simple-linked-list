@@ -30,8 +30,9 @@ class Node(object):
             return print("Nie znaleziono tego indeksa.")
         elif str(self.__index) == str(index):
             self.__next = Node(data, self.__next)
+            self.index_list()
             return
-        self.__next.add_at_index()
+        self.__next.add_at_index(index, data)
 
     def add_to_end(self, newhead):
         if self.__next is None:
