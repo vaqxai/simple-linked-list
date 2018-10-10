@@ -18,6 +18,10 @@ node1.delete_from_end()
 
 node1.print_list()
 
-node1.insert_at_index(1, 225)
+node1.replace_at_index(1, 225)
+
+node1.print_list()
+
+node1.add_at_index(1, 293)
 
 node1.print_list()

@@ -10,17 +10,28 @@ class Node(object):
         self.__next.set_index(self.__index+1)
         self.__next.index_list()
 
+    def get_index(self):
+        return self.__index
+
     def set_index(self, newindex):
         self.__index = newindex
 
-    def insert_at_index(self, index, data):
+    def replace_at_index(self, index, data):
         if self.__next is None:
             return print("Nie znaleziono tego indeksa.")
         elif str(self.__index) == str(index):
             self.__data = data
             self.index_list()
             return
-        self.__next.insert_at_index(index, data)
+        self.__next.replace_at_index(index, data)
+
+    def add_at_index(self, index, data):
+        if self.__next is None:
+            return print("Nie znaleziono tego indeksa.")
+        elif str(self.__index) == str(index):
+            self.__next = Node(data, self.__next)
+            return
+        self.__next.add_at_index()
 
     def add_to_end(self, newhead):
         if self.__next is None:
